@@ -6,13 +6,13 @@ pipeline {
     }
 
     environment {
-        DOCKER_IMAGE = 'your-dockerhub-username/node-jenkins-demo:latest'
+        DOCKER_IMAGE = 'abhishek0000111/node-jenkins-demo:latest'
     }
 
     stages {
         stage('Checkout') {
             steps {
-                git 'https://github.com/your-username/your-repo.git'
+                git 'https://github.com/Abhishek1234anand/EXPRESSDEMOFORCICD/'
             }
         }
         stage('Install') {
@@ -45,4 +45,4 @@ pipeline {
             }
         }
     }
-} 
+}
