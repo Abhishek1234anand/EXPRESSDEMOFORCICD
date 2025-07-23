@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
       - name: node-jenkins-demo
-        image: your-dockerhub-username/node-jenkins-demo:latest
+        image: abhishek0000111/node-jenkins-demo:latest
         ports:
         - containerPort: 3000 
