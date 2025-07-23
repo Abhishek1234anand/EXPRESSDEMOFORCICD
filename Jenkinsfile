@@ -12,7 +12,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git 'https://github.com/Abhishek1234anand/EXPRESSDEMOFORCICD/'
+                git branch: 'main', url: 'https://github.com/Abhishek1234anand/EXPRESSDEMOFORCICD/'
             }
         }
         stage('Install') {
