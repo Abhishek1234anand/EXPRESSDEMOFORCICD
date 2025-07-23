@@ -22,7 +22,6 @@ pipeline {
         }
         stage('Test') {
             steps {
-                // This will not fail the build if the test script is missing
                 catchError(buildResult: 'SUCCESS', stageResult: 'SUCCESS') {
                     bat 'npm test || echo No tests defined'
                 }
@@ -43,8 +42,10 @@ pipeline {
         }
         stage('Deploy to Kubernetes') {
             steps {
-                bat 'kubectl apply -f k8s-deployment.yaml'
-                bat 'kubectl apply -f k8s-service.yaml'
+                withEnv(['KUBECONFIG=C:\\Users\\asus\\.kube\\config']) {
+                    bat 'kubectl apply -f k8s-deployment.yaml'
+                    bat 'kubectl apply -f k8s-service.yaml'
+                }
             }
         }
     }
